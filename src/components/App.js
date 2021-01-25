@@ -16,12 +16,6 @@ class App extends React.Component{
         console.log(cleanData)
     }
     
-    colorChange(){
-        if(this.setState.currency.percent_change_1h < 0){
-            console.log("negative")
-        }
-    }
-
     // render App here
     render (){
         return (
@@ -36,8 +30,8 @@ class App extends React.Component{
                             <div className="name">{el.name}</div>
                             <div className="price price-current">${el.price_usd}</div>
                             <div className="price price-1h" style={{color: Math.sign(el.percent_change_1h) === -1 ? "red" : "green"}}><span>1H: $</span>{el.percent_change_1h}</div>
-                            <div className="price price-24h" style={{color: Math.sign(el.percent_change_1h) === -1 ? "red" : "green"}}><span>24H: $</span>{el.percent_change_24h}</div>
-                            <div className="price price-7d" style={{color: Math.sign(el.percent_change_1h) === -1 ? "red" : "green"}}><span>7D: $</span>{el.percent_change_7d}</div>
+                            <div className="price price-24h" style={{color: Math.sign(el.percent_change_24h) === -1 ? "red" : "green"}}><span>24H: $</span>{el.percent_change_24h}</div>
+                            <div className="price price-7d" style={{color: Math.sign(el.percent_change_7d) === -1 ? "red" : "green"}}><span>7D: $</span>{el.percent_change_7d}</div>
                         </div>
                     ))}
                 </div>
